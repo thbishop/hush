@@ -4,13 +4,17 @@ describe Secret do
   let(:secret) { Secret.new :data => 'foo-bar' }
   subject { secret }
 
-  describe 'valid?' do
-    it { should be_valid }
+  describe 'self.find' do
+    it 'returns the object' do
+      REDIS.should_receive(:get).with('my-id').and_return(secret)
+      expect(Secret.find('my-id').data).to eq 'foo-bar'
+    end
 
-    context 'without data' do
-      let(:secret) { Secret.new }
-
-      it { should_not be_valid }
+    context 'the secret does not exist' do
+      it 'returns nil' do
+        REDIS.should_receive(:get).with('bad').and_return(nil)
+        expect(Secret.find 'bad').to be_nil
+      end
     end
   end
 
@@ -21,7 +25,7 @@ describe Secret do
       REDIS.should_receive(:setex).
             with(/\w{10,}/, 600, 'foo-bar').
             and_return(response)
-      expect(secret.save).to be_true
+      its(:save) { should be_true }
     end
 
     context 'when not valid' do
@@ -31,6 +35,16 @@ describe Secret do
       its(:save) { should be_false }
     end
 
+  end
+
+  describe 'valid?' do
+    it { should be_valid }
+
+    context 'without data' do
+      let(:secret) { Secret.new }
+
+      it { should_not be_valid }
+    end
   end
 
 end

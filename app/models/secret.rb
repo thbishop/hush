@@ -7,6 +7,14 @@ class Secret
 
   validates :data, :presence => true
 
+  def self.find(id)
+    REDIS.get id
+  end
+
+  def id
+    @id ||= generate_id
+  end
+
   def save
     return false unless valid?
 
@@ -17,10 +25,6 @@ class Secret
   private
   def generate_id
     SecureRandom.urlsafe_base64(40)
-  end
-
-  def id
-    @id ||= generate_id
   end
 
 end
