@@ -3,16 +3,16 @@ require 'spec_helper'
 describe Secret do
 
   describe 'valid?' do
-    let(:secret) { Secret.new }
+    let(:secret) { Secret.new :data => 'foo-bar' }
     subject { secret }
 
-    it { should_not be_valid }
+    it { should be_valid }
 
-    context 'with data' do
-      before { subject.data = 'foo-bar' }
-      it { should be_valid }
+    context 'without data' do
+      let(:secret) { Secret.new }
+
+      it { should_not be_valid }
     end
-
   end
 
 end
