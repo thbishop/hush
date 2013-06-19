@@ -25,7 +25,7 @@ describe Secret do
       REDIS.should_receive(:setex).
             with(/\w{10,}/, 600, 'foo-bar').
             and_return(response)
-      its(:save) { should be_true }
+      expect(subject.save).to be_true
     end
 
     context 'when not valid' do
