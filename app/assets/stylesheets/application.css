@@ -12,3 +12,6 @@
  *= require_tree .
  *= require flat-ui
  */
+header {
+  margin-bottom: 15px;
+}
