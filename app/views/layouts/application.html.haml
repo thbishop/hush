@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+!!! 5
+%html
+  %head
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= 'Hush'
+    = stylesheet_link_tag    'application', :media => 'all'
+    = csrf_meta_tags
+  %body
+    %header
+      Foo bar
+    .container
+      = yield
+    = javascript_include_tag 'application'
