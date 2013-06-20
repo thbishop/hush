@@ -1,13 +1,24 @@
 require 'spec_helper'
 
 describe Secret do
-  let(:secret) { Secret.new :data => 'foo-bar' }
+  let(:data) { 'foo-bar' }
+  let(:id) { 'my-id-foo-bar-baz'}
+  let(:secret) { Secret.new :data => data, :id => id }
   subject { secret }
 
+  describe 'data' do
+    it 'returns and removes the data' do
+      REDIS.should_receive(:del).with(id)
+      expect(secret.data).to eq 'foo-bar'
+    end
+  end
+
   describe 'self.find' do
+    before { REDIS.stub(:del) }
+
     it 'returns the object' do
-      REDIS.should_receive(:get).with('my-id').and_return(secret.data)
-      expect(Secret.find('my-id').data).to eq 'foo-bar'
+      REDIS.should_receive(:get).with(id).and_return(data)
+      expect(Secret.find(id).data).to eq 'foo-bar'
     end
 
     context 'the secret does not exist' do
@@ -23,7 +34,7 @@ describe Secret do
 
     it 'saves' do
       REDIS.should_receive(:setex).
-            with(/\w{10,}/, 600, 'foo-bar').
+            with(id, 600, data).
             and_return(response)
       expect(subject.save).to be_true
     end

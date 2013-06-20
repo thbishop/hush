@@ -14,6 +14,11 @@ class Secret
     Secret.new :data => data, :id => id
   end
 
+  def data
+    REDIS.del id
+    @data
+  end
+
   def id
     @id ||= generate_id
   end
