@@ -22,6 +22,10 @@ class Secret
     operation == 'OK'
   end
 
+  def to_param
+    id
+  end
+
   private
   def generate_id
     SecureRandom.urlsafe_base64(40)
