@@ -6,7 +6,7 @@ describe Secret do
 
   describe 'self.find' do
     it 'returns the object' do
-      REDIS.should_receive(:get).with('my-id').and_return(secret)
+      REDIS.should_receive(:get).with('my-id').and_return(secret.data)
       expect(Secret.find('my-id').data).to eq 'foo-bar'
     end
 

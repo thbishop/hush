@@ -6,6 +6,7 @@ describe SecretsController do
     it 'returns http success' do
       get 'new'
       expect(response).to be_success
+      expect(response.status).to eq(200)
     end
   end
 
@@ -21,6 +22,7 @@ describe SecretsController do
       post 'create', :secret => data
 
       expect(response).to be_success
+      expect(response.status).to eq(200)
       expect(response).to render_template('link')
     end
   end
@@ -34,10 +36,17 @@ describe SecretsController do
     it 'returns http success' do
       get 'show', 'id' => '123456789'
       expect(response).to be_success
+      expect(response.status).to eq(200)
     end
 
     context 'with an invalid id' do
-      it 'does not exist'
+      let(:secret) { nil }
+
+      it 'does not exist' do
+        get 'show', 'id' => '123456789'
+        expect(response).to_not be_success
+        expect(response.status).to eq(404)
+      end
     end
   end
 

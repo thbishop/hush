@@ -3,12 +3,15 @@ class Secret
   extend ActiveModel::Callbacks
   include ActiveModel::Validations
 
-  attr_accessor :data
+  attr_accessor :data, :id
 
   validates :data, :presence => true
 
   def self.find(id)
-    REDIS.get id
+    data = REDIS.get id
+    return nil unless data
+
+    Secret.new :data => data, :id => id
   end
 
   def id

@@ -15,6 +15,14 @@ class SecretsController < ApplicationController
 
   def show
     @secret = Secret.find params[:id]
+
+    if @secret
+      render
+    else
+      render :file => 'public/404.html',
+             :status => :not_found,
+             :layout => false
+    end
   end
 
   private
