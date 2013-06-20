@@ -7,8 +7,8 @@
     = stylesheet_link_tag    'application', :media => 'all'
     = csrf_meta_tags
   %body
-    %header
-      Foo bar
     .container
+      %header
+        = render 'layouts/header'
       = yield
     = javascript_include_tag 'application'
