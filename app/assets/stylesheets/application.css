@@ -15,3 +15,7 @@
 header {
   margin-bottom: 15px;
 }
+
+.secret_url {
+  color: #1abc9c !important;
+}
