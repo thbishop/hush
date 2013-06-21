@@ -13,9 +13,17 @@
  *= require flat-ui
  */
 header {
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 
+header a, header a:hover {
+  color: #415b76;
+  text-decoration: none;
+}
+
 .disabled_text {
+  background-color: #ffffff !important;
   color: #1abc9c !important;
+  border-color: #dce4ec !important;
 }
