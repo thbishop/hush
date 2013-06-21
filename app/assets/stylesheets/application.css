@@ -16,6 +16,6 @@ header {
   margin-bottom: 15px;
 }
 
-.secret_url {
+.disabled_text {
   color: #1abc9c !important;
 }
