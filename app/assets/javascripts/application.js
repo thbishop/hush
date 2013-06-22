@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require flat-ui
+//= require zeroclipboard
+//= require secrets

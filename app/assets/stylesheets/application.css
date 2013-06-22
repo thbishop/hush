@@ -22,6 +22,33 @@ header a, header a:hover {
   text-decoration: none;
 }
 
+/* https://github.com/iurevych/Flat-UI/pull/23/files */
+.input-append .add-on,
+.input-prepend .add-on {
+  padding: 10px 6px 9px 6px !important;
+}
+
+.input-prepend input {
+  border-radius: 0 4px 4px 0 !important;
+}
+
+.input-append input {
+  border-radius: 4px 0 0 4px !important;
+}
+
+.clip_board_button {
+  height: 20px;
+  padding: 0px;
+  line-height: 0px;
+  border-width: 0px;
+  background-color: #ffffff;
+}
+
+.clip_board {
+  background-color: #ffffff !important;
+  border-color: #dce4ec !important;
+}
+
 .disabled_text {
   background-color: #ffffff !important;
   color: #1abc9c !important;
