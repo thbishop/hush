@@ -11,6 +11,7 @@
  *= require_self
  *= require_tree .
  *= require flat-ui
+ = require font-awesome
  */
 header {
   margin-top: 15px;
@@ -53,4 +54,21 @@ header a, header a:hover {
   background-color: #ffffff !important;
   color: #1abc9c !important;
   border-color: #dce4ec !important;
+}
+
+/* adds support for prepend against text-areas */
+.input-prepend textarea{
+  -webkit-border-radius: 0 3px 3px 3px;
+  -moz-border-radius: 0 3px 3px 3px;
+  border-radius: 0 3px 3px 3px;
+}
+.input-append textarea{
+  -webkit-border-radius: 3px 0 3px 3px;
+  -moz-border-radius: 3px 0 3px 3px;
+  border-radius: 3px 0 3px 3px;
+}
+.input-prepend.input-append textarea{
+  -webkit-border-radius: 0px 0 3px 3px;
+  -moz-border-radius: 0px 0 3px 3px;
+  border-radius: 0px 0 3px 3px;
 }

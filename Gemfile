@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'flatui-rails', '~> 0.0.4'
+gem 'font-awesome-rails', '~> 3.2.1.1'
 gem 'haml-rails', '~> 0.4'
 gem 'jquery-rails'
 gem 'rails', '4.0.0.rc2'
