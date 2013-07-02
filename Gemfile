@@ -9,8 +9,11 @@ gem 'rails', '4.0.0.rc2'
 gem 'redis', '~> 3.0.4'
 gem 'sass-rails', '~> 4.0.0.rc2'
 gem 'uglifier', '>= 1.3.0'
+gem 'unicorn', '~> 4.6.3'
 gem 'zeroclipboard-rails', '~> 0.0.4'
 
 group :development, :test do
+  gem 'guard-rspec', '~> 3.0.2'
+  gem 'foreman', '~> 0.63.0'
   gem 'rspec-rails', '~> 2.13.2'
 end
