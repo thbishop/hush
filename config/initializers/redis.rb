@@ -1,4 +1,4 @@
-uri = URI.parse ENV['HUSH_REDIS_URL']
+uri = URI.parse(ENV['HUSH_REDIS_URL']) if ENV['HUSH_REDIS_URL']
 
 args = Hash.new.tap do |h|
   %w(host password port).each do |item|
