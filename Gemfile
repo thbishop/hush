@@ -17,3 +17,7 @@ group :development, :test do
   gem 'foreman', '~> 0.63.0'
   gem 'rspec-rails', '~> 2.13.2'
 end
+
+group :production do
+  gem 'rails_12factor', '~> 0.0.2'
+end
