@@ -19,6 +19,11 @@ class Secret
     @data
   end
 
+  def decrypted_data
+    REDIS.del id
+    decrypt_data @data
+  end
+
   def id
     @id ||= generate_id
   end
@@ -26,7 +31,7 @@ class Secret
   def save
     return false unless valid?
 
-    operation = REDIS.setex id, 600, data
+    operation = REDIS.setex id, 600, encrypt_data(data)
     operation == 'OK'
   end
 
@@ -35,6 +40,14 @@ class Secret
   end
 
   private
+  def encrypt_data(data)
+    Encryptor.encrypt data, :key => HUSH_ENCRYPTION_KEY
+  end
+
+  def decrypt_data(encrypted_data)
+    Encryptor.decrypt encrypted_data, :key => HUSH_ENCRYPTION_KEY
+  end
+
   def generate_id
     SecureRandom.urlsafe_base64(40)
   end

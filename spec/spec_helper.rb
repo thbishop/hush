@@ -1,5 +1,6 @@
 ENV["RAILS_ENV"] ||= 'test'
-ENV['HUSH_REDIS_URL'] = 'redis://localhost:6379'
+ENV['HUSH_REDIS_URL']      = 'redis://localhost:6379'
+ENV['HUSH_ENCRYPTION_KEY'] = 'blah'
 
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
