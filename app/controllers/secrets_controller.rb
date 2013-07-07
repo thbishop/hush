@@ -19,9 +19,9 @@ class SecretsController < ApplicationController
     if @secret
       render
     else
-      render :file => 'public/404.html',
-             :status => :not_found,
-             :layout => false
+      render :template => 'errors/404',
+             :layout => 'application',
+             :status => :not_found
     end
   end
 
