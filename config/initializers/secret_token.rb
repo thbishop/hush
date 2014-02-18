@@ -9,4 +9,6 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Hush::Application.config.secret_key_base = 'e59f0f7923b1b2a6a6ede9b5bbc918ec3be2ae2513a098f6c23853ab7b09ff8ab37f2b500e474262be57a395d4c10e6927c45594866623f0d1b55d01de3022ed'
+secret = Rails.env.test? ? SecureRandom.hex(30) : ENV['HUSH_SECRET_TOKEN']
+
+Hush::Application.config.secret_key_base = secret
