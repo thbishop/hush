@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.0'
+
 gem 'coffee-rails', '~> 4.0.0'
 gem 'encryptor', '~> 1.1.3'
 gem 'flatui-rails', '~> 0.0.4'
