@@ -8,8 +8,7 @@ describe Secret do
   subject { secret }
 
   describe 'data' do
-    it 'returns encrypted and removes the data' do
-      REDIS.should_receive(:del).with(id)
+    it 'returns encrypted' do
       expect(secret.data).to eq encrypted_data
     end
   end
@@ -26,8 +25,6 @@ describe Secret do
   end
 
   describe 'self.find' do
-    before { REDIS.stub(:del) }
-
     it 'returns the object' do
       REDIS.should_receive(:get).with(id).and_return(data)
       expect(Secret.find(id).data).to eq 'foo-bar'

@@ -14,11 +14,6 @@ class Secret
     Secret.new :data => data, :id => id
   end
 
-  def data
-    REDIS.del id
-    @data
-  end
-
   def decrypted_data
     REDIS.del id
     decrypt_data @data
