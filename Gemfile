@@ -12,8 +12,11 @@ gem 'rails', '4.0.1'
 gem 'redis', '~> 3.0.4'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'unicorn', '~> 4.6.3'
 gem 'zeroclipboard-rails', '~> 0.0.4'
+
+group :development, :production do
+  gem 'unicorn', '~> 4.6.3'
+end
 
 group :development, :test do
   gem 'better_errors', '~> 0.9.0'''
