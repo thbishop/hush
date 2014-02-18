@@ -2,6 +2,8 @@
 
 A shameless rip off of one time secret
 
+[![Build Status](https://travis-ci.org/thbishop/hush.png?branch=master)](https://travis-ci.org/thbishop/hush)
+
 ## Introduction
 
 Hush is a simple web app which allows you to create a string and retrieve it one time. This could be useful for keeping sensitive strings out of your email, IM, etc.
