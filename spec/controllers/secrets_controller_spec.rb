@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SecretsController do
+describe SecretsController, type: :controller do
 
   describe 'GET new' do
     it 'returns http success' do
@@ -11,14 +11,14 @@ describe SecretsController do
   end
 
   describe 'GET create' do
-    let(:secret) { mock 'secret' }
+    let(:secret) { double 'secret' }
     let(:data) { { 'data' => 'foo-bar' } }
     before do
-      Secret.should_receive(:new).with(data).and_return(secret)
+      expect(Secret).to receive(:new).with(data).and_return(secret)
     end
 
     it 'returns http success' do
-      secret.stub :save => true
+      allow(secret).to receive(:save).and_return(true)
       post 'create', :secret => data
 
       expect(response).to be_success
@@ -28,9 +28,9 @@ describe SecretsController do
   end
 
   describe 'GET show' do
-    let(:secret) { stub 'secret', :id => '123456789', 'data' => 'foo-bar' }
+    let(:secret) { double 'secret', :id => '123456789', 'data' => 'foo-bar' }
     before do
-      Secret.should_receive(:find).with('123456789').and_return(secret)
+      expect(Secret).to receive(:find).with('123456789').and_return(secret)
     end
 
     it 'returns http success' do
