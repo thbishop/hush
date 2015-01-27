@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require flat-ui
+//= require twitter/bootstrap
 //= require zeroclipboard
 //= require secrets

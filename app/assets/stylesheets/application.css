@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require_tree .
- *= require flat-ui
  *= require font-awesome
  */
 header {
@@ -21,6 +20,22 @@ header {
 header a, header a:hover {
   color: #415b76;
   text-decoration: none;
+}
+
+body h2 {
+  color: #415b76;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+span a {
+  color: #1abc9c !important;
+  text-decoration: underline !important;
+}
+
+span a:hover {
+  text-decoration: none !important;
 }
 
 /* https://github.com/iurevych/Flat-UI/pull/23/files */
@@ -56,19 +71,36 @@ header a, header a:hover {
   border-color: #dce4ec !important;
 }
 
-/* adds support for prepend against text-areas */
-.input-prepend textarea{
-  -webkit-border-radius: 0 3px 3px 3px;
-  -moz-border-radius: 0 3px 3px 3px;
-  border-radius: 0 3px 3px 3px;
+.new_secret input {
+  background-color: #415b76;
+  color: #ffffff;
+  margin-top: 20px;
 }
-.input-append textarea{
-  -webkit-border-radius: 3px 0 3px 3px;
-  -moz-border-radius: 3px 0 3px 3px;
-  border-radius: 3px 0 3px 3px;
+
+.new_secret input:active {
+  background-color: #2c3e50;
+  color: #ffffff;
 }
-.input-prepend.input-append textarea{
-  -webkit-border-radius: 0px 0 3px 3px;
-  -moz-border-radius: 0px 0 3px 3px;
-  border-radius: 0px 0 3px 3px;
+
+.new_secret input:hover {
+  background-color: #4e6d8d;
+  color: #ffffff;
+}
+
+.clip_button_text_area {
+    height: 20px;
+}
+
+.palette-paragraph {
+  color: #7f8c8d;
+  font-size:12px;
+  line-height:17px
+}
+
+.palette-paragraph span {
+  color: #bdc3c7;
+}
+
+#secret_url {
+  border-width: 2px;
 }
