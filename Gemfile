@@ -14,7 +14,7 @@ gem 'uglifier', '~> 1.3.0'
 gem 'zeroclipboard-rails', '~> 0.0.4'
 
 group :development, :production do
-  gem 'unicorn', '~> 4.6.3'
+  gem 'puma', '~> 2.11.0'
 end
 
 group :development, :test do
