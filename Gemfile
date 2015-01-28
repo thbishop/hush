@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.5'
 
 gem 'twitter-bootstrap-rails', '~> 3.2.1.rc1'
 gem 'coffee-rails', '~> 4.1.0'
@@ -10,6 +10,7 @@ gem 'haml-rails', '~> 0.7.0'
 gem 'jquery-rails'
 gem 'rails', '4.2.0'
 gem 'redis', '~> 3.0.4'
+gem 'uglifier', '~> 1.3.0'
 gem 'zeroclipboard-rails', '~> 0.0.4'
 
 group :development, :production do
