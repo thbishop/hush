@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.2.3'
 
 gem 'twitter-bootstrap-rails', '~> 3.2.1.rc1'
 gem 'coffee-rails', '~> 4.1.0'
