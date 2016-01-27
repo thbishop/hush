@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'rails', '4.2.5.1'
 gem 'redis', '~> 3.0.4'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '~> 1.3.0'
+gem 'uglifier', '~> 2.7.2'
 gem 'zeroclipboard-rails', '~> 0.0.4'
 
 group :development, :production do
